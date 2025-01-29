@@ -52,7 +52,7 @@ std::cout << x++ << " " << ++x;
 
 Explanation: ```x++``` increments after its value is used, and ```++x``` increments before its value is used.
 
-#### Practice Problem
+### Practice Problem
 #### The voltage across a charging capacitor in an RC circuit is given by:
 $$ V(t) = V_s \times \left(1 - e^{-\frac{t}{R \cdot C}}\right) $$
 
