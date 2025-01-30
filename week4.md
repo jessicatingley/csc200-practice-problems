@@ -66,3 +66,67 @@ Both voltage and resistance are ```double```, ensuring precise arithmetic operat
 Returns ```double```, which is appropriate for power values.
 
 
+#### 4. What is the output of the following program?
+```cpp
+#include <iostream>
+using namespace std;
+
+void myFunction() {
+    cout << "Hello, World!" << endl;
+    return 5;
+}
+
+int main() {
+    int x = myFunction();
+    cout << "x = " << x << endl;
+    return 0;
+}
+```
+- ```
+  Hello, World!
+  x = 5
+  ```
+- ```
+  Hello, World!
+  x = 0
+  ```
+- Undefined behavior
+- #### Compilation error
+
+Explanation: The function ```myFunction()``` is declared with a ```void``` return type but attempts to return an ```int```. This results in a compilation error.
+
+
+#### 5. What will be the output of the following C++ program?
+```cpp
+#include <iostream>
+using namespace std;
+
+void compute(int x, int y = 10) {
+    cout << x * y << endl;
+}
+
+int main() {
+    compute(5);
+    compute(5, 2);
+    return 0;
+}
+```
+- ```
+  50  
+  10
+  ```
+- ```
+  50
+  50
+  ```
+- ```
+  10
+  10
+  ```
+- ```
+  10
+  50
+  ```
+
+Explanation: A. The first call ```compute(5);``` uses the default value of ```y = 10```, so ```5 * 10 = 50```.
+The second call ```compute(5, 2);``` overrides the default value and uses ```y = 2```, so ```5 * 2 = 10```.
