@@ -130,3 +130,70 @@ int main() {
 
 Explanation: A. The first call ```compute(5);``` uses the default value of ```y = 10```, so ```5 * 10 = 50```.
 The second call ```compute(5, 2);``` overrides the default value and uses ```y = 2```, so ```5 * 2 = 10```.
+
+### Practice Problem
+#### Extract File Extension from a Filename
+#### Learning Objectives:
+
+- Working with strings and built-in string functions
+- Understanding command-line arguments
+- Extracting and manipulating substrings
+- Applying basic file handling concepts
+
+#### Background:
+
+File extensions help computers determine the type of file and which application should open it. For example:
+
+.txt → Text Document
+.pdf → PDF Document
+.cpp → C++ Source Code
+You are developing a file management utility that needs to extract the file extension from a given filename.
+
+#### Task:
+
+Create a C++ program that:
+
+- Accepts a filename with an extension as a command-line argument.
+- Uses a function to extract the file extension.
+- Prints the extracted extension.
+
+#### Example Input & Output:
+
+#### Command:
+
+```
+./program report.pdf
+```
+#### Output:
+```
+File Extension: pdf
+```
+
+#### Example Solution:
+
+```cpp
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+// Function to extract file extension
+void extractFileExtension(string filename) {
+    size_t dotIndex = filename.find(".");
+    string extension = filename.substr(dotIndex + 1);
+
+    cout << "File Extension: " << extension << endl;
+}
+
+int main(int argc, char* argv[]) {
+    string filename = argv[1];
+    extractFileExtension(filename);
+    return 0;
+}
+```
+#### Explanation:
+
+- Command-line arguments provide the filename.
+- find(".") locates the position of the dot (.).
+- substr(dotIndex + 1) extracts everything after the dot.
+- The program prints the file extension.
