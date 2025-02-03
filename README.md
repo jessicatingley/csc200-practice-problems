@@ -23,8 +23,8 @@ Each **problem file** includes:
 ## 🎯 How to Use This Repository  
 1. Clone the repository:  
    ```sh
-   git clone https://github.com/yourusername/cpp-practice-problems.git
-   cd cpp-practice-problems
+   git clone https://github.com/jessicatingley/csc200-practice-problems.git
+   cd csc200-practice-problems
    ```
 2. Browse the problems in the directory.
 3. Attempt to solve them before checking the provided solutions!
