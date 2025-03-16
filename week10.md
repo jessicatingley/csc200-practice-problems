@@ -83,6 +83,36 @@ Explanation:
 The constructor `Example(int x)` uses `this->x = x;` to assign the value of the parameter `x` to the object's member variable `x`.
 Since `obj` is initialized with `10`, calling `obj.show();` prints `10`.
 
+5. What will be the output of the following code?
+```cpp
+#include <iostream>
+class Test {
+    int value;
+public:
+    Test(int v) { value = v; }
+    Test(const Test& t) { value = t.value + 5; }
+    void show() { std::cout << value << std::endl; }
+};
+
+int main() {
+    Test obj1(10);
+    Test obj2 = obj1;
+    obj2.show();
+    return 0;
+}
+```
+- `10`
+- `5`
+- **`15`**
+- Compilation error
+
+Explanation:
+`Test obj1(10);` creates an object `obj1` with `value = 10`.
+`Test obj2 = obj1;` calls the copy constructor:
+`Test(const Test& t) { value = t.value + 5; }`
+Since `obj1.value = 10`, `obj2.value = 10 + 5 = 15`.
+`obj2.show();` prints 15.
+
 ### Practice Problem
 Problem Statement:
 Create a Battery class that stores the charge level of a battery (0-100%). Implement the following:
