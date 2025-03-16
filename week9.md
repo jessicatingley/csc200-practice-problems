@@ -89,3 +89,55 @@ std::cout << *p;
 Explanation:
 `p` is first assigned the address of `a`, but it is later reassigned to `&b`.
 When we print `*p`, it now points to `b`, so it prints `10`.
+
+### Practie Problem: Simulating a Simple Sensor with Dynamic Memory Allocation
+
+#### Problem Statement:
+You are designing a system that reads sensor values and stores them dynamically in memory.
+
+Write a function that asks the user how many sensor readings they want to store.\
+Dynamically allocate an array using pointers.\
+Let the user input the sensor values and print them.\
+Ensure that memory is properly freed at the end.
+
+#### Example Input:
+```
+Enter number of sensor readings: 3
+Enter readings: 20 25 30
+```
+
+#### Example Output:
+```
+Sensor Readings: 20 25 30
+```
+
+#### Example Solution:
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of sensor readings: ";
+    cin >> n;
+
+    // Dynamically allocate memory
+    int *readings = new int[n];
+
+    cout << "Enter readings: ";
+    for (int i = 0; i < n; i++) {
+        cin >> readings[i];
+    }
+
+    cout << "Sensor Readings: ";
+    for (int i = 0; i < n; i++) {
+        cout << readings[i] << " ";
+    }
+    cout << endl;
+
+    // Free allocated memory
+    delete[] readings;
+
+    return 0;
+}
+```
