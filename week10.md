@@ -32,3 +32,29 @@ Explanation:
 Explanation:
 The this pointer holds the memory address of the current object in member functions.
 It helps resolve conflicts between instance variables and function parameters with the same name.
+
+3. What is the purpose of a copy constructor?
+- To initialize an object with default values
+- To delete an object from memory
+- **To create a new object as a copy of an existing object**
+- To prevent object copying
+Explanation:
+A copy constructor allows creating an object using another object’s values. This is useful when passing objects by value or returning objects from functions.
+
+What is the correct way to declare a friend function?
+```cpp
+class A {
+private:
+    int data;
+public:
+    friend void showData(A obj);
+};
+```
+- **Implementation is correct**
+- `void A::showData(A obj);`
+- `friend class showData(A obj);`
+- Friend functions must be defined inside the class
+
+Explanation:
+The keyword `friend` allows a non-member function to access private members of the class.
+The declaration must be inside the class but defined outside.
