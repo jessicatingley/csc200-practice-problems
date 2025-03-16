@@ -59,6 +59,29 @@ Explanation:
 The keyword `friend` allows a non-member function to access private members of the class.
 The declaration must be inside the class but defined outside.
 
+4. What will be the output of the following program?
+```cpp
+#include <iostream>
+class Example {
+    int x;
+public:
+    Example(int x) { this->x = x; }
+    void show() { std::cout << x << std::endl; }
+};
+
+int main() {
+    Example obj(10);
+    obj.show();
+    return 0;
+}
+```
+- Compilation error
+- **`10`**
+- Garbage value
+- Segmentation fault
+Explanation:
+The constructor `Example(int x)` uses `this->x = x;` to assign the value of the parameter `x` to the object's member variable `x`.
+Since `obj` is initialized with `10`, calling `obj.show();` prints `10`.
 
 ### Practice Problem
 Problem Statement:
