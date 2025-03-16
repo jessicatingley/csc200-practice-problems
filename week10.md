@@ -58,3 +58,50 @@ public:
 Explanation:
 The keyword `friend` allows a non-member function to access private members of the class.
 The declaration must be inside the class but defined outside.
+
+
+### Practice Problem
+Problem Statement:
+Create a Battery class that stores the charge level of a battery (0-100%). Implement the following:
+
+A constructor that initializes the charge to a user-specified value.\
+A member function useBattery(int amount) that reduces the charge.\
+A member function showCharge() that prints the current charge.
+
+#### Example Usage:
+```
+Battery b(50);  // Initialize with 50% charge
+b.useBattery(10);
+b.showCharge();  // Output: Battery Charge: 40%
+```
+
+#### Sample Solution:
+```cpp
+#include <iostream>
+using namespace std;
+
+class Battery {
+private:
+    int charge;
+
+public:
+    Battery(int c) { charge = c; }  // Constructor
+
+    void useBattery(int amount) {
+        charge -= amount;
+        if (charge < 0) charge = 0;
+    }
+
+    void showCharge() {
+        cout << "Battery Charge: " << charge << "%" << endl;
+    }
+};
+
+int main() {
+    Battery b(50);
+    b.useBattery(10);
+    b.showCharge();
+    return 0;
+}
+```
+
